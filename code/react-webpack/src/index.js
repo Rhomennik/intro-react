@@ -1,1 +1,5 @@
-console.log('Oi eu sou o GOKU')
+'use strict'
+
+var sum = require('./app')
+
+console.log(sum(1, 2))

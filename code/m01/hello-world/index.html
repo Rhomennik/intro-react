@@ -9,39 +9,16 @@
 </head>
 
 <body>
-    <h1>Hello Paraguay!</h1>
 
-    <div id="app"></div>
-    <div id="app2"></div>
-    <div id="app3"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
-
-    <script>
-        // Criando ELEMENTO 1 passando 3 Parametros--!    1: html, 2: Propiedades  3: Conteudo
-        var h1 = React.createElement('li', null, 'Hello h1 React')
-            // Criando ELEMENTOS ANINHADOS 1 passando 3 Parametros--!    1: html, 2: Propiedades  3: OutroElemento
-        var h2 = React.createElement('div', null, [
-
-                React.createElement('span', null, React.createElement('i', null, 'Italico')),
-                React.createElement('span', null, 'texto do Span2')
-            ])
-            // Forma mais curta de fazer, Usando DOM.(html) seria 1 parametro 
-        var h3 = React.DOM.div(null, [
-
-            React.DOM.span(null, React.DOM.i(null, 'Italico')),
-            React.DOM.span(null, 'texto do Span2')
-        ])
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 
 
-        // Renderizando com o Dom-React,: 1: NomeDaVar 2:pegadoIdHtml
-        ReactDOM.render(h1, document.getElementById('app'))
-        ReactDOM.render(h2, document.getElementById('app2'))
-        ReactDOM.render(h3, document.getElementById('app3'))
-
-
-        console.log(h1)
+    <script type="text/babel">
+        ReactDOM.render(
+        <h1>Hellow Rhome</h1>, document.getElementById('app') )
     </script>
 </body>
 

@@ -25,6 +25,10 @@ class Timer extends Component {
 
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate timer', this.props, prevProps)
+    }
+
     componentDidMount () {
         console.log('componentDidMount Timer')
         this.timer = setInterval(() => this.setState({ time: this.state.time + 1}), 1000)
@@ -36,7 +40,7 @@ class Timer extends Component {
     }
 
     render() {
-        console.log('👁‍🗨 render timer')
+        console.log('render timer')
     return (<div>Timer: {this.state.time} </div>)
     } 
 }

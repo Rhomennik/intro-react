@@ -28,7 +28,7 @@ class App extends Component{
 
 
     render() {
-        console.log('♥️ Render APP')
+        console.log('render APP')
         return (
             <div>
                 <Timer time={this.state.time} />

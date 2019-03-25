@@ -12,15 +12,21 @@ class Timer extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log('⛰ componentWillReceiveProps', this.props, nextProps)
+        console.log('componentWillReceiveProps TIMER', this.props, nextProps)
     }
 
     shouldComponentUpdate (nextProps, nextState) {
-        console.log('shouldComponentUpdate', this.props.time, nextProps.time)
+       // console.log('shouldComponentUpdate TIMER', this.props.time, nextProps.time)
         return this.props.time !== nextProps.time
     }
 
+    componentWillUpdate(nextProps, nextState) {
+        console.log('componentWillUpdate TIMER', this.props, nextProps)
+
+    }
+
     componentDidMount () {
+        console.log('componentDidMount Timer')
         this.timer = setInterval(() => this.setState({ time: this.state.time + 1}), 1000)
     }
 
@@ -30,6 +36,7 @@ class Timer extends Component {
     }
 
     render() {
+        console.log('👁‍🗨 render timer')
     return (<div>Timer: {this.state.time} </div>)
     } 
 }

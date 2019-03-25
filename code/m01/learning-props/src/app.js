@@ -2,22 +2,31 @@
 
 import React, {Component} from 'react'
 
-
-import Title from './title'
-
+import Square from './square'
 
 class App extends Component{
     render() {
         return (
             <div className='1'>
-             <Title name="Rhomennik" / >
+            {['blue', 'red', 'green', 'pink', 'yellow'].map((square) => (
+             <Square key={square} color={square} / >
+            ))}
             </div>
         )
     }
 }
-
-
 export default App
+
+
+
+
+
+
+
+
+
+
+
 
 
 

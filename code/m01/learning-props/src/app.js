@@ -3,14 +3,16 @@
 import React, {Component} from 'react'
 
 import Button from './button'
+import LikeButton from './like-button'
+import SearchButton from './search-button'
+import SeartchButton from './search-button';
 
 class App extends Component{
     render() {
         return (
             <div className='container'>
-             <Button>
-                 <span>Botao teste</span>
-                 </Button>
+             <LikeButton />
+             <SeartchButton />
             </div>
         )
     }

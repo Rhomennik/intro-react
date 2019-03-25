@@ -2,9 +2,10 @@
 
 import React from 'react'
 
-const Button = ({children}) => (
+const Button = ({children, handleClick}) => (
 
-    <button>{children}</button>
+    <button className='main-button' onClick={handleClick}>
+    {children}</button>
 
 )
 

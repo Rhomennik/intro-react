@@ -6,7 +6,7 @@ const webpack = require('webpack')
 
 const validate = require('webpack-validator')
 
-module.exports = {
+module.exports = validate({
     entry: [
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3000',
@@ -37,4 +37,4 @@ module.exports = {
             loader: 'babel'
         }]
     }
-}
+})

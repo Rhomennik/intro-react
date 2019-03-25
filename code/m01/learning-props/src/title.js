@@ -16,6 +16,11 @@ Title.defaultProps = {
            }
        }
 
+
+/* REnderizando com React Class();
+*/
+
+
 // const Title = React.createClass({
 // // Metodo default se nao tiver passado a props
 // getDefaultProps: function() {

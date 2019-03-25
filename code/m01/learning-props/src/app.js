@@ -7,12 +7,23 @@ import LikeButton from './like-button'
 import SearchButton from './search-button'
 import SeartchButton from './search-button';
 
+
+// Este e um component StateFull (Ele manipula estado)
 class App extends Component{
+
+    constructor() {
+        super()
+        this.state = {
+            text: 'Rhomennik'
+        }
+
+    }
     render() {
         return (
-            <div className='container'>
-             <LikeButton />
-             <SeartchButton />
+            <div className='container' onClick={() => this.setState({
+                text: 'Outro Texto'
+            })}>
+            {this.state.text}
             </div>
         )
     }

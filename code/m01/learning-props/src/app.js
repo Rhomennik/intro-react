@@ -3,6 +3,7 @@
 import React, {Component} from 'react'
 
 import Button from './button'
+import Square from './square'
 import LikeButton from './like-button'
 import SearchButton from './search-button'
 import SeartchButton from './search-button';
@@ -10,20 +11,25 @@ import SeartchButton from './search-button';
 
 // Este e um component StateFull (Ele manipula estado)
 class App extends Component{
-
+    
     constructor() {
         super()
         this.state = {
-            text: 'Rhomennik'
+            color: "green"
         }
-
     }
+
     render() {
         return (
-            <div className='container' onClick={() => this.setState({
-                text: 'Outro Texto'
-            })}>
-            {this.state.text}
+            <div>
+                <Square color={this.state.color} />
+                {['red', 'green', 'blue'].map((color) => (
+                    <Button
+                     key={color}
+                     handleClick={() => this.setState({color})}>
+                     {color}
+                    </Button>
+                ))}
             </div>
         )
     }

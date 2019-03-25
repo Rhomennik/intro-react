@@ -8,8 +8,8 @@ class App extends Component{
     render() {
         return (
             <div className='1'>
-            {['blue', 'red', 'green', 'pink', 'yellow'].map((square) => (
-             <Square key={square} color={square} / >
+            {['blue', 'red', 'green', 'purple', 'yellow'].map((square, index) => (
+             <Square key={index} color={square} / >
             ))}
             </div>
         )

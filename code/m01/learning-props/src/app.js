@@ -2,27 +2,36 @@
 
 import React, {Component} from 'react'
 
-import Button from './button'
-
 
 class App extends Component {
-    render () {
-        return (       
-         <form 
-            onSubmit={(e) => {
-            e.preventDefault()
-              console.log('event', e)}}
-              onChange={(e) => {
-                  console.log('name: ' , e.target.name)
-                  console.log('value: ' , e.target.value)
-              }}
-              >
 
-             <input type="name" name="name"/>
-             <input type="email" name="email"/>
-             <button type='submit'>Guardar</button>
-        </form>
-                // Target: Meu input
+    constructor() {
+        super()
+        this.state = {
+            checked: false,
+            showContent: false
+        }
+    }
+
+    render () {
+        return (
+       <div>
+           <label>
+            <input type='checkbox' checked={this.state.checked} 
+                 onChange={(e) => {
+                 this.setState({
+                     checked: !this.state.checked
+                    }, () => {
+                        this.setState({
+                            showContent: this.state.checked
+                        })
+                    })
+                 }}/> Mostrar Conteudo
+
+
+           </label>
+           {this.state.showContent && <div> Olha eu aqui!</div>}
+       </div>
         )
     }
 }

@@ -2,39 +2,15 @@
 
 import React, {Component} from 'react'
 
-import Timer from './timer'
+import Button from './button'
 
-
-// Este e um component StateFull (Ele manipula estado)
 class App extends Component{
-    
-    constructor() {
-        console.log('Constructor')
-        super()
-        this.state = {
-            time: 0,
-            showTimer: true
-        }
-    }
-
-
-    componentWillMount() {
-        console.log('componentWillMount')
-    }
-
-    componentDidMount() {
-        console.log('componentDidMount App')
-    }
-
-
     render() {
-        console.log('render APP')
         return (
             <div>
-                <Timer time={this.state.time} />
-                <button onClick={() => {
-                    this.setState({time: this.state.time + 10})
-                }}>Change Props</button>
+                <Button handleClick={() => console.log('clicou')}>
+                   Clique em mim
+                </Button>
             </div>
         )
     }

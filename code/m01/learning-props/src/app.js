@@ -7,43 +7,28 @@ import Button from './button'
 
 class App extends Component {
 
-    constructor () {
+    constructor() {
         super()
         this.state = {
-            value: 'Valor Inicial',
-            checked: false,
-            checked2: false
+            value: '2'
         }
     }
+
     render () {
-        return (
-    <div>
-        <form>
-            <input type="text" value={this.state.value} onChange={(e) => {
-                console.log(e.target.value)
-                this.setState({
-                    value: e.target.value
-                })
-            }} /> 
-            <label>
-                <input type='checkbox' value='Legal' checked={this.state.checked} onChange={(e) => {
-                    console.log(e.target.checked)
-                    this.setState({
-                        checked: !this.state.checked
-                    })
-                }}/>
-                Checkbox
-            </label>
-                
-            <label>
-                <input type='checkbox' value='Legal' defaultChecked />
-                Checkbox
-            </label>
-                radio
-            <input type='radio' name='rd' value='1' /> Radio 1
-            <input type='radio' name='rd' value='2' /> Radio 2
+        return (       
+         <form>
+             <select multiple value={['1', '3']} onChange={(e) => {
+                 console.log(e.target.value)
+                 this.setState({
+                     value: e.target.value
+                 })
+             }}>
+                 <option value='1' >Opcao 1</option>
+                 <option value='2' >Opcao 2</option>
+                 <option value='3' >Opcao 3</option>
+             </select>
+           
         </form>
-    </div>
                 // Target: Meu input
         )
     }

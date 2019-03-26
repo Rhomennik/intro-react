@@ -14,13 +14,21 @@ class App extends Component {
             starred: []
         }
     }
+
+    getGitHubApiUrl (username, type) {
+        const internalUser = username ? `/${username}` : ''
+        const internalType = type ? `/${type}` : ''
+        return `https://api.github.com/users${internalUser}${internalType}`
+    }
+
+
 // Buscar usuario com ajax 
     handleSearch (e) {
    const value = e.target.value
    const keyCode = e.which || e.keyCode
    const ENTER = 13
    if ( keyCode === ENTER ) {
-      ajax().get(`https://api.github.com/users/${value}`)
+      ajax().get(this.getGitHubApiUrl(value))
       .then((result) => {
           this.setState({
               userinfo: {
@@ -30,7 +38,9 @@ class App extends Component {
                   repos: result.public_repos,
                   followers: result.followers,
                   following: result.following
-              }
+              },
+              repos: [],
+              starred: []
           })
          // console.log(result)
       })
@@ -40,9 +50,9 @@ class App extends Component {
 
 getRepos(type) {
     return (e) => {
-        ajax().get(`https://api.github.com/users/Rhomennik/${type}`)
+        const username = this.state.userinfo.login
+        ajax().get(this.getGitHubApiUrl(username, type))
         .then((result) => {
-            console.log(result[0].html_url)
            this.setState({
                [type]: result.map((repo) => ({
                        name: repo.name,

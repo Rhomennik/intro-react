@@ -14,7 +14,7 @@ class App extends Component {
             starred: []
         }
     }
-
+// Buscar usuario com ajax 
     handleSearch (e) {
    const value = e.target.value
    const keyCode = e.which || e.keyCode
@@ -38,6 +38,23 @@ class App extends Component {
 }
 
 
+getRepos(type) {
+    return (e) => {
+        ajax().get(`https://api.github.com/users/Rhomennik/${type}`)
+        .then((result) => {
+            console.log(result[0].html_url)
+           this.setState({
+               [type]: result.map((repo) => ({
+                       name: repo.name,
+                       link: repo.html_url
+               }))
+           })
+       })
+    }
+
+}
+
+
 
     render() {
         return <AppContent
@@ -45,8 +62,8 @@ class App extends Component {
         repos={this.state.repos}
         starred={this.state.starred}
         handleSearch={(e) => this.handleSearch(e)}
-        getRepos={() => console.log('getRepos')}
-        getStarred={() => console.log('getStarred')}
+        getRepos={this.getRepos('repos')}
+        getStarred={this.getRepos('starred')}
         
         />
     }

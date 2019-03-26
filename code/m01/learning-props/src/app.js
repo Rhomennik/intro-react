@@ -4,20 +4,32 @@ import React, {Component} from 'react'
 
 import Button from './button'
 
-class App extends Component{
-    render() {
+
+class App extends Component {
+
+    constructor () {
+        super()
+        this.state = {
+            value: 'Valor Inicial'
+        }
+    }
+    render () {
         return (
-            <div>
-                <Button handleClick={() => console.log('clicou')}>
-                   Clique em mim
-                </Button>
-            </div>
+    <div>
+        <form>
+            <input type="text" value={this.state.value} onChange={(e) => {
+                console.log(e.target.value)
+                this.setState({
+                    value: e.target.value
+                })
+            }} /> 
+        </form>
+    </div>
         )
     }
 }
+
 export default App
-
-
 
 
 

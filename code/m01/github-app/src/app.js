@@ -37,7 +37,9 @@ class App extends Component {
                   login: result.login,
                   repos: result.public_repos,
                   followers: result.followers,
-                  following: result.following
+                  following: result.following,
+                  updated_at: result.updated_at,
+                  location: result.location
               },
               repos: [],
               starred: []

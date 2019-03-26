@@ -13,6 +13,8 @@ const  UserInfo = ({userinfo}) => (
       <li>Seguidores: {userinfo.followers}</li>
       <li>Seguindo: {userinfo.following}</li>
    </lu>
+   <li>Ultimo vez: {userinfo.updated_at}</li>
+   <li>Pais: {userinfo.location}</li>
  </div>
 )
 

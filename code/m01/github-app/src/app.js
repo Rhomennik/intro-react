@@ -37,12 +37,16 @@ class App extends Component {
    }
 }
 
+
+
     render() {
         return <AppContent
         userinfo={this.state.userinfo}
         repos={this.state.repos}
         starred={this.state.starred}
         handleSearch={(e) => this.handleSearch(e)}
+        getRepos={() => console.log('getRepos')}
+        getStarred={() => console.log('getStarred')}
         
         />
     }

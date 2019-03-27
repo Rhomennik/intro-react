@@ -75,16 +75,18 @@ getRepos(type) {
 
 
 
-    render() {
-        return <AppContent
-        userinfo={this.state.userinfo}
-        repos={this.state.repos}
-        starred={this.state.starred}
+render() {
+    return <AppContent
+    // Formato reduzido
+    {...this.state}
+    // Formato normal
+      // userinfo={this.state.userinfo}
+      // repos={this.state.repos}
+      // starred={this.state.starred}
+      // isFetching={this.state.isFetching}        
         handleSearch={this.handleSearch}
-        isFetching={this.state.isFetching}
         getRepos={this.getRepos('repos')}
         getStarred={this.getRepos('starred')}
-        
         />
     }
 }

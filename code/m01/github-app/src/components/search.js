@@ -14,6 +14,7 @@ const Search = ({ isDisabled, handleSearch }) => (
 )
 
 Search.propType = {
-    handleSearch: PropTypes.func.isRequired
+    handleSearch: PropTypes.func.isRequired,
+    isDisabled: PropTypes.bool.isRequired
 }
 export default Search

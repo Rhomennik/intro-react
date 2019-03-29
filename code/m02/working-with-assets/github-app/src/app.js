@@ -30,7 +30,6 @@ class App extends Component {
         const keyCode = e.which || e.keyCode
         const ENTER = 13
    if ( keyCode === ENTER ) {
-        
             this.setState({isFetching: true})
 
       ajax().get(this.getGitHubApiUrl(value))
@@ -70,7 +69,6 @@ getRepos(type) {
            })
        })
     }
-
 }
 
 

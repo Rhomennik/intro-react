@@ -2,7 +2,7 @@
 
 import React, {PropTypes} from 'react'
 
-const  Apuestas = ({userinfo}) => (
+const  Apuestas = ({userinfo, bangu1, caxias2}) => (
   <div className='user-info'>
     <table className="table">
   <thead>
@@ -19,6 +19,8 @@ const  Apuestas = ({userinfo}) => (
       <td>Bangu 1
       <td>Caxias 2</td> 
       </td>
+      <td><button onClick={bangu1}>2.00</button></td>
+      <td><button onClick={caxias2}>1.60</button></td>
     </tr>
   </tbody>
 </table>

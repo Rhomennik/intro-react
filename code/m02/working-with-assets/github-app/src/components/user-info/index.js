@@ -1,21 +1,24 @@
-'user strict'
+'use strict'
 
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
+import './user-info.css'
 
-const  UserInfo = ({userinfo}) => (
+const UserInfo = ({ userinfo }) => (
   <div className='user-info'>
     <img src={userinfo.photo} />
+
     <h1>
-       <a href={`https://github.com/${userinfo.login}`}>{userinfo.username}</a>
-       </h1>
-    <lu className='respos-info'>
-      <li>Repositorios: {userinfo.repos}</li>
+      <a href={`https://github.com/${userinfo.login}`}>
+        {userinfo.username}
+      </a>
+    </h1>
+
+    <ul className='repos-info'>
+      <li>Repositórios: {userinfo.repos}</li>
       <li>Seguidores: {userinfo.followers}</li>
       <li>Seguindo: {userinfo.following}</li>
-   </lu>
-   <li>Ultimo vez: {userinfo.updated_at}</li>
-   <li>Pais: {userinfo.location}</li>
- </div>
+    </ul>
+  </div>
 )
 
 UserInfo.propTypes = {
@@ -28,6 +31,5 @@ UserInfo.propTypes = {
     following: PropTypes.number.isRequired
   })
 }
-
 
 export default UserInfo

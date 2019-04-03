@@ -4,9 +4,6 @@ const path = require('path')
 const webpack = require('webpack')
 const validate = require('webpack-validator')
 
-const HtmlPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
-
 module.exports = validate({
   devtool: 'source-map',
 
@@ -19,18 +16,12 @@ module.exports = validate({
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
-    publicPath: ''
+    filename: 'bundle.js',
+    publicPath: '/dist/'
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new DashboardPlugin(),
-
-    new HtmlPlugin({
-      title: 'GitHub app',
-      template: path.join(__dirname, 'src', 'html', 'template-dev.html')
-    })
+    new webpack.HotModuleReplacementPlugin()
   ],
 
   module: {
@@ -50,14 +41,7 @@ module.exports = validate({
       test: /\.css$/,
       exclude: /node_modules/,
       include: /src/,
-      loaders: ['style', 'css']
+      loaders: ['style', 'raw']
     }]
-  },
-
-  resolve: {
-    alias: {
-      src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src', 'components')
-    }
   }
 })

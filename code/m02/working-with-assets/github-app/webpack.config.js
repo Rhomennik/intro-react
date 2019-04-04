@@ -30,6 +30,7 @@ module.exports = validate({
     
     new HtmlPlugin({
       title: 'Github App: by Rhome',
+      inject: false,
       template: path.join(__dirname, 'src', 'html', 'template.html')
     })
   ],
@@ -51,7 +52,7 @@ module.exports = validate({
       test: /\.css$/,
       exclude: /node_modules/,
       include: /src/,
-      loaders: ['style', 'css']
+      loaders: ['style', 'css?modules']
     }]
   }
 })

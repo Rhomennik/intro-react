@@ -1,9 +1,9 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
-
+import style from './user-info.css'
 const UserInfo = ({ userinfo }) => (
-  <div className='user-info'>
+  <div className={style.body}>
     <img src={userinfo.photo} />
 
     <h1>

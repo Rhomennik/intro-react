@@ -8,7 +8,9 @@
     "lint:fix": "standard --fix",
     "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
     "storybook": "start-storybook -p 6006 -c storybook",
-    "build-storybook": "build-storybook -c storybook"
+    "build-storybook": "build-storybook -c storybook",
+    "lint": "eslint .",
+    "lint:fixes": "eslint:fix . --fix"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",

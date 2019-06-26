@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1554296496354" clover="3.2.0">
-  <project timestamp="1554296496354" name="All files">
-    <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2" elements="17" coveredelements="17" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1">
-      <file name="map.js" path="/home/rhomennik/intro-react/code/m02/jest-in-practice/src/map/map.js">
-        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
-        <line num="2" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="3" count="13" type="cond" truecount="2" falsecount="0"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="6" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="14" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+<coverage generated="1561575287003" clover="3.2.0">
+  <project timestamp="1561575287003" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1" elements="10" coveredelements="10" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1">
+      <file name="soma.js" path="/home/rhomennik/intro-react/code/m02/jest-in-practice/src/soma/soma.js">
+        <metrics statements="2" coveredstatements="2" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="cond" truecount="5" falsecount="0"/>
       </file>
     </metrics>
   </project>
